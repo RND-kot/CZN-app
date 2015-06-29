@@ -1,0 +1,13 @@
+<ion-view view-title="Поиск">
+  <ion-content>
+<form ng-submit="searchwork(searchpar)">
+  <label class="item item-input">
+    <input type="text" placeholder="Должность" ng-model="searchpar.keyword">
+  </label>
+  <label class="item item-input" ng-model="searchpar.fee">
+    <input type="text" placeholder="Зарплата от ...">
+  </label>
+ <button class="button button-royal button-block" type="submit">Искать!</button>
+</form>
+  </ion-content>
+</ion-view>

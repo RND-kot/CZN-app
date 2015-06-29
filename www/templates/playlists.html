@@ -1,0 +1,18 @@
+<ion-view view-title="История поиска">
+  <ion-content>
+    <ion-list>
+      <div ng-if = "localjobs.length">
+          <ion-item collection-repeat = "job in localjobs | unique:'Num' " ng-href="#/app/playlists/{{job.Num}}" >
+              <div>{{job.Group}}</div>
+              <div><span>{{job.Price + ' рублей'}}</span><span ng-style="{'float':'right','color':'gray'}">Размещено: {{job.Dat }}</span></div>
+          </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+    <div class="bar bar-footer bar-balanced" ng-if = "localjobs.length == undefined">
+        <div  class="title">История поиска пока пуста</div>
+    </div>
+    <div class="bar bar-footer bar-balanced" ng-if = "localjobs.length > 0" ng-click = "clearlocal()">
+        <div  class="title">Очистить историю</div>
+    </div>
+</ion-view>

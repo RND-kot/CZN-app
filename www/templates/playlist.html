@@ -1,0 +1,30 @@
+<ion-view view-title="Подробнее о вакансии">
+    <ion-content>
+      <p class = "p_gray">Вакансия размещена: {{::vacan.Dat}}</p>
+        <div class="card">
+          <div class="item item-tevacant-wrap">
+              <h1>{{ ::vacan.Group}}</h1>
+              <p ng-if = "vacan.Price"><span class = "span_h">{{::vacan.Price + ' рублей'}}</span></p>
+              <p ng-if = "vacan.Graf"><span class = "span_h">{{::vacan.Graf}}</span></p>
+          </div>
+        </div>
+        <div class="card">
+            <div class="item item-tevacant-wrap">
+                <p ng-if="vacan.Obz"><span class="span_h">Должностные обязанности: </span><br><span>{{::vacan.Obz}}</span></p>
+                <p ng-if="vacan.Obr"><hr class = "style-two"><span class="span_h">Необходимое образование: </span></hr><br><span>{{::vacan.Obr}}</span></p>
+                <p ng-if="vacan.Treb"><hr class = "style-two"><span class="span_h">Требования : </span></hr><br><span>{{::vacan.Treb}}</span></p>
+                <p ng-if="vacan.Usl"><hr class = "style-two"><span class="span_h">Дополнительные условия : </span></hr><br><span>{{::vacan.Usl}}</span></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-tevacant-wrap">
+                <p ng-ig="vacan.Name_pred">{{::vacan.Name_pred}}</p>
+                <p ng-if="vacan.Adress">Адрес: {{::vacan.Adress}}</p>
+                <p ng-ig="vacan.Cp">{{::vacan.Cp}}</p>
+                <p ng-if="vacan.Tel">  <a class="button icon-left ion-ios-telephone button-calm button-clear"  ng-href="tel:{{vacan.Tel}}"> Контактный телефон: {{::vacan.Tel}}</a></p>
+                <p ng-if="vacan.Www">  <a class="button icon-left ion-at button-balanced button-clear" ng-click = "linkopen(vacan.Www)" > Web: {{::vacan.Www}}</a></p>
+                <p ng-if="vacan.Email"><a class="button icon-left ion-email button-royal button-clear" ng-href="mailto:{{vacan.Email}}" target="_blank">Email: {{::vacan.Email}}</a></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

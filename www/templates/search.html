@@ -1,0 +1,44 @@
+<ion-view view-title="Поиск">
+  <ion-content>
+      <form ng-submit="searchpar(fee,keyword,group.Group,graf.Graf)" >
+          <label class="item item-input">
+              <input type="text" placeholder="Должность " ng-model="keyword" class="my-input">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Зарплата от"  ng-pattern="/^\d+$/" class="my-input" ng-model="fee">
+          </label>
+          <label class="item item-input item-select">
+              <div class="input-label">Профобласть: </div>
+              <select ng-model="group" ng-options="z.Group for z in ::groups"> </select>
+          </label>
+          <label class="item item-input item-select" >
+              <div class="input-label">График работы:</div>
+              <select ng-model="graf" ng-options="x.Graf for x in ::grafs"> </select>
+          </label>
+          <button class="button button-royal button-block" type="submit">Искать!</button>
+      </form>
+      <ion-item collection-repeat = "y in worker"  class = "item-icon-right item"  ng-href="#/app/playlists/{{y.Num}}" >
+          <div>{{y.Group}}</div>
+          <div><span>{{y.Price + ' рублей'}}</span><span ng-style="{'float':'right','color':'gray'}">Размещено: {{y.Dat }}</span></div>
+      </ion-item>
+  </ion-content>
+    <div class="bar bar-footer bar-balanced">
+  <div ng-if = "worker.length >= 0" class="title">
+      <ng-pluralize
+          count="worker.length" when="{
+          '0': 'Нет подходящих вакансий',
+          '1': 'Найдена 1 вакансия',
+          '2': 'Найдено 2 вакансии',
+          '3': 'Найдено 3 вакансии',
+          '4': 'Найдено 4 вакансии',
+          'other': 'Найдено {{worker.length}} вакансий'}">
+      </ng-pluralize>
+  </div>
+  <div ng-if = "worker.length == undefined" class="title">Поиск еще не проводился</div>
+</div>
+<script id="loading.html" type="text/ng-template">
+      <ion-spinner></ion-spinner>
+      <br />
+      <button class="button button-clear button-light" ng-click="hide()">Отменить</button>
+</script>
+</ion-view>

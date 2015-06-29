@@ -1,0 +1,54 @@
+<style>
+  .my-input {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    background: red;
+  }
+  .my-input.ng-invalid {
+    color: red;
+
+  }
+.p_gray {
+  text-align: right;
+  color: gray;
+  /*margin-bottom: 40px !important;*/
+}
+.l_gray {
+    text-align: left;
+    color: gray;
+    /*margin-bottom: 40px !important;*/
+}
+
+
+.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.l_text {
+    align: left;
+    /*margin-bottom: 40px !important;*/
+}
+
+.span_h{
+    font-size: large;
+    color: #000000;
+}
+.p_blue{
+  color:Navy;
+}
+
+.block_text{
+    text-align:left;
+}
+.block_pic{
+    text-align:right;
+}
+
+.spinner svg {
+  width: 19% !important;
+  height: 85px !important;
+}
+</style>
+
